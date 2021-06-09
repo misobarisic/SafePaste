@@ -1,5 +1,5 @@
 module.exports.meta = {
-    title: "SafePaste",
+    title: "SafePaste by Mišo Barišić",
     icon: "/favicon.ico"
 }
 module.exports.options = {
