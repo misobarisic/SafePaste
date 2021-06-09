@@ -1,5 +1,5 @@
 {
-  "name": "with-tailwindcss",
+  "name": "safepaste",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,9 +8,14 @@
     "start": "next start"
   },
   "dependencies": {
+    "base-64": "^1.0.0",
+    "codemirror": "^5.61.1",
     "next": "latest",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-clipboard.js": "^2.0.16",
+    "react-codemirror2": "^7.2.1",
+    "react-dom": "^17.0.1",
+    "react-markdown": "^6.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.4",

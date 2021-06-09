@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    p {
+        @apply text-xl md:text-2xl font-semibold;
+    }
+    a {
+        @apply text-blue-700 font-semibold;
+    }
+}

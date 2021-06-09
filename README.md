@@ -1,29 +1,62 @@
-# Next.js + Tailwind CSS Example
+# What is SafePaste?
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) (v2.1) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+[SafePaste](https://misobarisic.com/go/safepaste) is an open-source service similar to Pastebin where you are able to store any piece of text and generate links for easy cross platform sharing.
 
-It uses the new [`Just-in-Time Mode`](https://tailwindcss.com/docs/just-in-time-mode) for Tailwind CSS.
+What makes SafePaste stand out is its lack of a **database**. It is 100% frontend (client side).
 
-## Preview
+### Advantages:
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+- Your links **cannot be deleted**
+- Your links **cannot be censored**
+- The server hosting SafePaste (including any fork using the same encode process) have **no access** to your data
+- Your data will be accessible **forever** (as long as you have the link)
+- Data is decoded on your device
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+### Markdown support
+
+The only currently supported markdown use case is `[title](link)`.
+
+## How it works
+
+When you click on "Generate URL", SafePaste stores your data  using [base64](https://en.wikipedia.org/wiki/Base64) generates a link: `safepaste.misobarisic.com/<your data>`
+
+When you open a link, SafePaste reads and decodes whatever is after the first `/` after which the appropriate data is displayed in the editor.
+
+This process is done entirely **in your browser**, and the web server hosting NoPaste [never has access to the fragment](https://en.wikipedia.org/wiki/Fragment_identifier)
+
+
+## HTTP REST
+
+SafePaste links can be easily created or read with a HTTP GET request:
+
+Make sure to use `x-www-form-urlencoded` to pass data.
+
+The accept header should include `application/json` or `*/*`.
+
+### Encode
+```javascript
+GET /api/encode
+Parameter: data
+
+Example response: 
+{
+    "data": "this is an example",
+    "link": "dGhpcyBpcyBhbiBleGFtcGxl"
+} 
+```
+
+### Decode
+```javascript
+GET /api/decode
+Parameter: link
+
+Example response:
+{
+    "data": "another example",
+    "link": "YW5vdGhlciBleGFtcGxl"
+}
+```
 
 ## Deploy your own
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/misobarisic/safepaste/)
