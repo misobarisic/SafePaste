@@ -1,7 +1,7 @@
 import Clipboard from "react-clipboard.js";
 
 export default function Button({clipboardData, text}) {
-    return <Clipboard component="a" button-href="#"
+    return <Clipboard component="p" button-href="#"
                       data-clipboard-text={clipboardData}>
         <button
             type="button"
