@@ -5,8 +5,6 @@ export default function handler(req, res) {
         if (checkAcceptHeader(req,res)) return
         if (checkContentType(req,res)) return
 
-        console.log(req.headers)
-
         const {generateURL} = require("../../utils/urlUtils")
         const data = req.body.data
         const link = generateURL(data)
