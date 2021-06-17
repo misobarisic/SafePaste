@@ -1,7 +1,7 @@
 import {useState} from "react"
 import {useRouter} from "next/router"
 
-import {meta, options, footer} from "../config"
+import {footer, meta, options} from "../config"
 import {decodeURL, generateURL} from "../utils/urlUtils"
 import Footer from "../components/Footer/Footer";
 import DataViewer from "../components/DataViewer";
@@ -47,7 +47,7 @@ export default function Page() {
                         className="relative inline-flex items-center mx-1 my-1 px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         onClick={() => setViewOnly(!viewOnly)}
                     >
-                        {viewOnly ? "Open Editor" : "View as Markdown"}
+                        {viewOnly ? "Open Editor" : "Close Editor"}
                     </button>
 
                     <a onClick={() => alert("URL copied to clipboard")}>

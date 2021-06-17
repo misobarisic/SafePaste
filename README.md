@@ -22,8 +22,6 @@ When you click on "Generate URL", SafePaste stores your data  using [base64](htt
 
 When you open a link, SafePaste reads and decodes whatever is after the first `/` after which the appropriate data is displayed in the editor.
 
-This process is done entirely **in your browser**, and the web server hosting NoPaste [never has access to the fragment](https://en.wikipedia.org/wiki/Fragment_identifier)
-
 
 ## HTTP REST
 

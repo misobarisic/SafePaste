@@ -10,7 +10,7 @@
   "dependencies": {
     "base-64": "^1.0.0",
     "codemirror": "^5.61.1",
-    "next": "latest",
+    "next": "^11.0.0",
     "react": "^17.0.1",
     "react-clipboard.js": "^2.0.16",
     "react-codemirror2": "^7.2.1",
@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.0.4",
-    "postcss": "^8.1.10",
+    "postcss": "^8.3.5",
     "tailwindcss": "^2.1.1"
   }
 }
