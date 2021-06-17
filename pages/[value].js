@@ -21,7 +21,7 @@ export default function Page() {
     const [value, setValue] = useState(decodeURL(router.query.value) || "No data")
     const [editor, setEditor] = useState(null)
 
-    const [viewOnly, setViewOnly] = useState(false)
+    const [viewOnly, setViewOnly] = useState(true)
 
     const onChange = (editor, data, value) => {
         const encoded = generateURL(value)
