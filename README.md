@@ -11,6 +11,8 @@ What makes SafePaste stand out is its lack of a **database**. It is 100% fronten
 - The server hosting SafePaste (including any fork using the same encode process) have **no access** to your data
 - Your data will be accessible **forever** (as long as you have the link)
 - Data is decoded on your device
+- [AES256](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) + [Base64](https://en.wikipedia.org/wiki/Base64)
+  encoding
 
 ### Markdown support
 
@@ -18,9 +20,10 @@ The only currently supported markdown use case is `[title](link)`.
 
 ## How it works
 
-When you click on "Generate URL", SafePaste stores your data  using [base64](https://en.wikipedia.org/wiki/Base64) generates a link: `safepaste.misobarisic.com/<your data>`
+When you click on "Generate URL", SafePaste generates a link based on your input: `paste.misobarisic.com/<your data>`
 
-When you open a link, SafePaste reads and decodes whatever is after the first `/` after which the appropriate data is displayed in the editor.
+When you open a link, SafePaste reads and decodes whatever comes after the first `/` upon which the appropriate data is
+displayed in the editor.
 
 
 ## HTTP REST
@@ -44,15 +47,40 @@ Example response:
 ```
 
 ### Decode
+
 ```javascript
-GET /api/decode
+GET / api / decode
 Parameter: link
 
-Example response:
+Example
+response:
 {
-    "data": "another example",
-    "link": "YW5vdGhlciBleGFtcGxl"
+    "data"
+:
+    "another example",
+        "link"
+:
+    "YW5vdGhlciBleGFtcGxl"
 }
+```
+
+## Forks
+
+If you wish for all SafePaste links to be accessible on your fork of this project make sure not to edit these fields
+
+`config.js`
+
+``` javascript
+module.exports.base = {
+    key: "safepaste"
+}
+```
+
+`utils/urlUtils.js`
+
+```javascript
+module.exports.generateURL = input => base64.encode(aes256.encrypt(key, input))
+module.exports.decodeURL = input => aes256.decrypt(key, base64.decode(input))
 ```
 
 ## Deploy your own

@@ -1,6 +1,6 @@
 {
   "name": "safepaste",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "aes256": "^1.1.0",
     "base-64": "^1.0.0",
     "codemirror": "^5.61.1",
     "next": "^11.0.0",
