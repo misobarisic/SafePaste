@@ -8,6 +8,11 @@ module.exports = {
                 destination: `/${generateURL(initialText)}`,
                 permanent: false,
             },
+            {
+                source: "/md",
+                destination: `/`,
+                permanent: false,
+            },
         ]
     },
 }
