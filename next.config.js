@@ -9,7 +9,7 @@ module.exports = {
                 permanent: false,
             },
             {
-                source: "/md",
+                source: "//md",
                 destination: `/`,
                 permanent: false,
             },
