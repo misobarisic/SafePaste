@@ -1,4 +1,9 @@
-# What is SafePaste?
+<h1 align="center">Welcome to SafePaste 👋</h1>
+<p>
+  <a href="https://github.com/misobarisic/SafePaste/blob/main/LICENSE" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+</p>
 
 [SafePaste](https://misobarisic.com/go/safepaste) is an open-source service similar to Pastebin where you are able to store any piece of text and generate links for easy cross platform sharing.
 
@@ -86,3 +91,19 @@ module.exports.decodeURL = input => aes256.decrypt(key, base64.decode(input))
 ## Deploy your own
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/misobarisic/safepaste/)
+
+## Author
+
+👤 **Mišo Barišić**
+
+* Website: https://www.misobarisic.com
+* GitHub: [@misobarisic](https://github.com/misobarisic)
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+## 📝 License
+
+Copyright © 2021 [misobarisic](https://github.com/misobarisic).<br />
+This project is [MIT](https://github.com/misobarisic/SafePaste/blob/main/LICENSE) licensed.
