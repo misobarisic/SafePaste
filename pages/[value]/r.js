@@ -20,8 +20,7 @@ export default function Page() {
 
     const router = useRouter()
     if (!router.query.value) return <></>
-
-    const value = decodeURL(router.query.value)
+    const value = decodeURL(router.query.value) || "No data"
 
     return (
         <BasicWrapper>
