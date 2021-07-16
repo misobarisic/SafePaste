@@ -14,13 +14,14 @@ import BasicWrapper from "../hoc/BasicWrapper";
 import ButtonWrapper from "../hoc/ButtonWrapper";
 
 export default function Page() {
+    const [origin, setOrigin] = useState("")
+    if (typeof window !== 'undefined' && !origin) {
+        setOrigin(window.location.origin)
+    }
+
     const router = useRouter()
-
-    if (!router.query.value) return <></>
-
     const [value, setValue] = useState(decodeURL(router.query.value) || "No data")
     const [editor, setEditor] = useState(null)
-
     const [viewOnly, setViewOnly] = useState(true)
 
     const onChange = (editor, data, value) => {
@@ -52,13 +53,12 @@ export default function Page() {
 
                     <a onClick={() => alert("URL copied to clipboard")}>
                         <ClipboardButton text="Generate URL (with editor)"
-                                         clipboardData={`${window.location.origin}/${generateURL(value)}`}/>
+                                         clipboardData={`${origin}/${generateURL(value)}`}/>
                         <ClipboardButton text="Generate URL (read-only)"
-                                         clipboardData={`${window.location.origin}/${generateURL(value)}/md`}/>
+                                         clipboardData={`${origin}/${generateURL(value)}/md`}/>
                     </a>
                 </ButtonWrapper>
             </MainHOC>
-
             <Footer {...footer}/>
         </BasicWrapper>
     )
