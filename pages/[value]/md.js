@@ -13,7 +13,6 @@ import ButtonWrapper from "../../hoc/ButtonWrapper";
 
 export default function Page() {
     const router = useRouter()
-
     if (!router.query.value) return <></>
 
     const value = decodeURL(router.query.value)

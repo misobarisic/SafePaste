@@ -25,7 +25,7 @@ module.exports.base = {
 Yes, that's correct. 
 Everything you paste can be represented as a set of characters in the URL.
 That way everything is permanent and nothing can be deleted.
-Data is encoded using plain old base64. 
+Data is encoded using AES256 and Base64. 
 
 
 [Info](https://misobarisic.com/go/safepastesource)`,
