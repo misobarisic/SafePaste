@@ -20,7 +20,7 @@ export default function Page() {
     }
 
     const router = useRouter()
-    const [value, setValue] = useState(decodeURL(router.query.value) || "No data")
+    let value = decodeURL(router.query.value) || "No data"
     const [editor, setEditor] = useState(null)
     const [viewOnly, setViewOnly] = useState(true)
 
@@ -39,7 +39,7 @@ export default function Page() {
                     <Editor editorDidMount={setEditor}
                             value={value}
                             options={options}
-                            onBeforeChange={setValue}
+                            onBeforeChange={(e) => value = e}
                             onChange={onChange}/>}
 
                 <ButtonWrapper>
