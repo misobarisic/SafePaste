@@ -10,8 +10,14 @@ import BasicHeader from "../../hoc/BasicHeader";
 import ClipboardButton from "../../components/ClipboardButton";
 import BasicWrapper from "../../hoc/BasicWrapper";
 import ButtonWrapper from "../../hoc/ButtonWrapper";
+import {useState} from "react";
 
 export default function Page() {
+    const [origin, setOrigin] = useState("")
+    if (typeof window !== 'undefined' && !origin) {
+        setOrigin(window.location.origin)
+    }
+
     const router = useRouter()
     if (!router.query.value) return <></>
 
@@ -25,7 +31,8 @@ export default function Page() {
                 <DataViewer value={value}/>
                 <ButtonWrapper>
                     <a onClick={() => alert("URL copied to clipboard")}>
-                        <ClipboardButton text="Copy URL to clipboard" clipboardData={`${window.location.origin}/${generateURL(value)}/md`}/>
+                        <ClipboardButton text="Copy URL to clipboard"
+                                         clipboardData={`${origin}/${generateURL(value)}/r`}/>
                     </a>
                 </ButtonWrapper>
             </Main>
