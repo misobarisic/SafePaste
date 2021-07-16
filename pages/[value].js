@@ -1,4 +1,4 @@
-import {useState} from "react"
+import {useEffect, useState} from "react"
 import {useRouter} from "next/router"
 
 import {footer, meta, options} from "../config"
@@ -20,7 +20,11 @@ export default function Page() {
     }
 
     const router = useRouter()
-    let value = decodeURL(router.query.value)
+    const [value, setValue] = useState(decodeURL(router.query.value))
+    useEffect(() => {
+        if (router.query.value) setValue(decodeURL(router.query.value) || "Something went wrong")
+    }, [router.query.value])
+
     const [editor, setEditor] = useState(null)
     const [viewOnly, setViewOnly] = useState(true)
 
@@ -39,7 +43,7 @@ export default function Page() {
                     <Editor editorDidMount={setEditor}
                             value={value}
                             options={options}
-                            onBeforeChange={(e) => value = e}
+                            onBeforeChange={setValue}
                             onChange={onChange}/>}
 
                 <ButtonWrapper>
