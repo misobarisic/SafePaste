@@ -1,12 +1,7 @@
-import Head from "next/head"
-import {useEffect, useState} from "react"
 import {useRouter} from "next/router"
 
-import Clipboard from 'react-clipboard.js'
-import ReactMarkdown from "react-markdown"
-
-import {meta,footer} from "../../config"
-import {generateURL,decodeURL} from "../../utils/urlUtils"
+import {footer, meta} from "../../config"
+import {decodeURL, generateURL} from "../../utils/urlUtils"
 import Footer from "../../components/Footer/Footer";
 import DataViewer from "../../components/DataViewer";
 import WelcomeComponent from "../../components/WelcomeComponent";
@@ -21,7 +16,7 @@ export default function Page() {
 
     if (!router.query.value) return <></>
 
-    const value = decodeURL(router.query.value) || "No data"
+    const value = decodeURL(router.query.value)
 
     return (
         <BasicWrapper>

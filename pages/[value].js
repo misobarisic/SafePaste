@@ -20,7 +20,7 @@ export default function Page() {
     }
 
     const router = useRouter()
-    let value = decodeURL(router.query.value) || "No data"
+    let value = decodeURL(router.query.value)
     const [editor, setEditor] = useState(null)
     const [viewOnly, setViewOnly] = useState(true)
 
