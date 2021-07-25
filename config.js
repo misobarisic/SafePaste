@@ -12,13 +12,20 @@ module.exports.options = {
     showCursorWhenSelecting: true,
 }
 module.exports.footer = {
-    links: [{
-        text: "Developer",
-        link: "https://misobarisic.com/"
-    }, {
-        text: "Source Code",
-        link: "https://misobarisic.com/go/safepastesource",
-    }]
+    links: [
+        {
+            text: "Developer",
+            link: "https://misobarisic.com/"
+        },
+        {
+            text: "Source Code",
+            link: "https://misobarisic.com/go/safepastesource",
+        },
+        {
+            text: "SafeLink",
+            link: "https://misobarisic.com/go/safelink",
+        }
+    ]
 }
 module.exports.base = {
     initialText: `SafePaste relies on the URL to read data.
