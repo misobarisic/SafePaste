@@ -1,6 +1,5 @@
 export default function handler(req, res) {
     const {checkAcceptHeader,checkContentType} = require("../../utils/apiUtils")
-
     if (req.method === 'GET') {
         if (checkAcceptHeader(req,res)) return
         if (checkContentType(req,res)) return

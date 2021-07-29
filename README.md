@@ -38,15 +38,19 @@ Make sure to use `x-www-form-urlencoded` to pass data.
 
 The accept header should include `application/json` or `*/*`.
 
+`data` refers to the original (redirect) URL, whereas
 `link` refers to the part of the URL after `paste.misobarisic.com/`
 
 ### Encode
 
 ```javascript
-GET /api/encode
-Parameter: data
+GET / api / encode
+Body
+should
+contain: data
 
-Example response: 
+Example
+response:
 {
     "data": "this is an example",
     "link": "dGhpcyBpcyBhbiBleGFtcGxl"
@@ -57,13 +61,19 @@ Example response:
 
 ```javascript
 GET / api / decode
-Parameter: link
+Body
+should
+contain: link
 
 Example
 response:
 {
-    "data": "another example",
-    "link": "YW5vdGhlciBleGFtcGxl"
+  "data"
+:
+  "another example",
+          "link"
+:
+  "YW5vdGhlciBleGFtcGxl"
 }
 ```
 
