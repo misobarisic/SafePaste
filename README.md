@@ -45,10 +45,9 @@ The accept header should include `application/json` or `*/*`.
 
 ```
 GET /api/encode
-Bodyshould contain: data
+Body should contain: data
 
-Example
-response:
+Example response:
 {
     "data": "this is an example",
     "link": "dGhpcyBpcyBhbiBleGFtcGxl"
@@ -61,8 +60,7 @@ response:
 GET /api/decode
 Body should contain: link
 
-Example
-response:
+Example response:
 {
   "data": "another example",
   "link": "YW5vdGhlciBleGFtcGxl"
