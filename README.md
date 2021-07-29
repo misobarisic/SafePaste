@@ -30,7 +30,6 @@ When you click on "Generate URL", SafePaste generates a link based on your input
 When you open a link, SafePaste reads and decodes whatever comes after the first `/` upon which the appropriate data is
 displayed in the editor.
 
-
 ## HTTP REST
 
 SafePaste links can be easily created or read with a HTTP GET request:
@@ -39,7 +38,10 @@ Make sure to use `x-www-form-urlencoded` to pass data.
 
 The accept header should include `application/json` or `*/*`.
 
+`link` refers to the part of the URL after `paste.misobarisic.com/`
+
 ### Encode
+
 ```javascript
 GET /api/encode
 Parameter: data
@@ -60,12 +62,8 @@ Parameter: link
 Example
 response:
 {
-    "data"
-:
-    "another example",
-        "link"
-:
-    "YW5vdGhlciBleGFtcGxl"
+    "data": "another example",
+    "link": "YW5vdGhlciBleGFtcGxl"
 }
 ```
 
