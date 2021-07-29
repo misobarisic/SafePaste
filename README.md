@@ -43,11 +43,9 @@ The accept header should include `application/json` or `*/*`.
 
 ### Encode
 
-```javascript
-GET / api / encode
-Body
-should
-contain: data
+```
+GET /api/encode
+Bodyshould contain: data
 
 Example
 response:
@@ -59,21 +57,15 @@ response:
 
 ### Decode
 
-```javascript
-GET / api / decode
-Body
-should
-contain: link
+```
+GET /api/decode
+Body should contain: link
 
 Example
 response:
 {
-  "data"
-:
-  "another example",
-          "link"
-:
-  "YW5vdGhlciBleGFtcGxl"
+  "data": "another example",
+  "link": "YW5vdGhlciBleGFtcGxl"
 }
 ```
 
