@@ -1,12 +1,12 @@
 export default function handler(req, res) {
     const {checkAcceptHeader,checkContentType} = require("../../utils/apiUtils")
     if (req.method === 'GET') {
-        if (checkAcceptHeader(req,res)) return
-        if (checkContentType(req,res)) return
+        if (checkAcceptHeader(req, res)) return
+        if (checkContentType(req, res)) return
 
-        const {generateURL} = require("../../utils/urlUtils")
-        const data = req.body.data
-        const link = generateURL(data)
+        const {generateURL, generateURLwithPass} = require("../../utils/urlUtils")
+        const {data, pass} = req.body
+        const link = pass ? generateURLwithPass(data, pass) : generateURL(data)
         if (data) {
             res.status(200).json({data, link})
         } else {

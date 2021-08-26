@@ -37,5 +37,6 @@ Data is encoded using AES256 and Base64.
 
 
 [Info](https://misobarisic.com/go/safepastesource)`,
-    key: "safepaste"
+    key: "safepaste",
+    passphrase: "!safepassword"
 }

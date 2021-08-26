@@ -54,12 +54,40 @@ Example response:
 } 
 ```
 
+### Encode with password
+
+```
+GET /api/encode
+Body should contain: data, pass
+
+// Password is not sent back in the response
+Example response:
+{
+    "data": "this is an example",
+    "link": "dGhpcyBpcyBhbiBleGFtcGxl"
+} 
+```
+
 ### Decode
 
 ```
 GET /api/decode
 Body should contain: link
 
+Example response:
+{
+  "data": "another example",
+  "link": "YW5vdGhlciBleGFtcGxl"
+}
+```
+
+### Decode with password
+
+```
+GET /api/decode
+Body should contain: link, pass
+
+// Password is not sent back in the response
 Example response:
 {
   "data": "another example",
