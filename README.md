@@ -19,6 +19,11 @@ What makes SafePaste stand out is its lack of a **database**. It is 100% fronten
 - [AES256](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) + [Base64](https://en.wikipedia.org/wiki/Base64)
   encoding
 
+### Text Alignment
+
+Make sure your editor string starts with either `--left` or `--right` to change the text alignment. Otherwise it
+defaults to `center`.
+
 ### Markdown support
 
 The only currently supported markdown use case is `[title](link)`.
