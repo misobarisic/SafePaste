@@ -60,6 +60,8 @@ export default function Page() {
                                          clipboardData={`${origin}/${generateURL(value)}`}/>
                         <ClipboardButton text="Generate URL (read-only)"
                                          clipboardData={`${origin}/${generateURL(value)}/r`}/>
+                        <ClipboardButton text="Generate URL (editor-only)"
+                                         clipboardData={`${origin}/${generateURL(value)}/e`}/>
                     </a>
                 </ButtonWrapper>
             </MainHOC>
